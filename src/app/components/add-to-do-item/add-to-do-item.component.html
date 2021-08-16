@@ -1,0 +1,13 @@
+
+<div class="row">
+    <div class="column">
+        <h2>Add To Do Item</h2>
+        <input class="input" #todoTitle placeholder="Todo Title...">
+        <span class="button" (click)="onAdd(todoTitle.value)">Add</span>
+    </div>
+</div>
+<div class="row">
+    <div class="column"><app-list-to-do-item [todos]="todos" (todoid)="onDelete($event)"> </app-list-to-do-item></div>
+    <div class="column"><app-todo-summary></app-todo-summary></div>
+</div>
+
