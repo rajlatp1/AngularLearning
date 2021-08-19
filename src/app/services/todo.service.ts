@@ -15,7 +15,7 @@ export class TodoService {
   constructor() { }
 
   addTodoItem(todoTitle: string): void {
-    var todo = new Todo(this.todoid++,todoTitle);
+    const todo = new Todo(this.todoid++,todoTitle);
     this.todos.push(todo);
     this.todo.next(this.todos.slice());
   }
