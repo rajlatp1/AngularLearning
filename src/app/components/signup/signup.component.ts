@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { passwordValidator } from 'src/app/validators/password.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,12 +13,12 @@ export class SignupComponent implements OnInit {
  
   signupForm: FormGroup;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.signupForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.email,Validators.required]),
-      password: new FormControl('', [Validators.required,Validators.minLength(8)]),
+      password: new FormControl('', [Validators.required,Validators.minLength(8),passwordValidator()]),
   
     });
   
@@ -25,4 +27,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
   get signup() { return this.signupForm.controls; }
+  onSubmit(): void { 
+    localStorage.setItem('isRegistered','true'); 
+    this.router.navigate(['/todo-add']);
+
+  }
 }

@@ -9,6 +9,7 @@ import { TodoSummaryComponent } from './components/todo-summary/todo-summary.com
 import { VowToUpperConToLowerPipe } from './pipes/vow-to-upper-con-to-lower.pipe';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SignupComponent } from './components/signup/signup.component';
     TodoSummaryComponent,
     VowToUpperConToLowerPipe,
     PageNotFoundComponent,
-    SignupComponent
+    SignupComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

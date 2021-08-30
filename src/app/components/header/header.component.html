@@ -1,0 +1,9 @@
+
+<ul *ngIf="authService.isRegistered()">
+    <li><a
+      style="cursor: pointer;"
+      (click)="onLogout()"
+      >Logout</a>
+    </li>
+ </ul>
+

@@ -1,23 +1,58 @@
-<form [formGroup]="signupForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+<label for="first-name">First Name: </label>
+<input id="firstName" type="text" formControlName="firstName">
+<div *ngIf="signup.firstName.invalid && (signup.firstName.dirty || signup.firstName.touched)"
+class="alert">
+<div *ngIf="signup.firstName.errors?.required">
+First Name is required.
+</div></div>
 
-    <label for="first-name">First Name: </label>
-    <input id="firstName" type="text" formControlName="firstName" required>
-    <div *ngIf="signup.firstName.invalid && (signup.firstName.dirty || signup.firstName.touched)"
-    class="alert">
+<label for="last-name">Last Name: </label>
+<input id="last-name" type="text" formControlName="lastName">
+<div *ngIf="signup.lastName.invalid && (signup.lastName.dirty || signup.lastName.touched)"
+class="alert">
+<div *ngIf="signup.lastName.errors?.required">
+Last Name is required.
+</div></div>
 
-  <div *ngIf="signup.firstName.errors?.required">
-    First Name is required.
-  </div>
+<label for="email">Email: </label>
+<input id="email" type="text" formControlName="email">
+<div *ngIf="signup.email.invalid && (signup.email.dirty || signup.email.touched)"
+class="alert">
+<div *ngIf="signup.email.errors?.required">
+Email is required.
+</div>
+<div *ngIf="signup.email.errors?.email">
+    Email is not valid.
+ </div>
+</div>
 
-   </div>
-  
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  
-    <label for="email">Email: </label>
-    <input id="email" type="text" formControlName="email">
-  
-    <label for="password">Password: </label>
-    <input id="password" type="text" formControlName="password">
-    <button type="submit" [disabled]="!signupForm.valid">Submit</button>
-  </form>
+<label for="password">Password: </label>
+<input id="password" type="text" formControlName="password">
+<div *ngIf="signup.password.invalid && (signup.password.dirty || signup.password.touched)"
+class="alert">
+<div *ngIf="signup.password.errors?.required">
+Password is required.
+</div>
+<div *ngIf="signup.password.errors?.minlength">
+    Password must be atleast 8 characters.
+ </div>
+ <div *ngIf="signup.password.errors?.passwordHasUppercase===false">
+    Password must contain capital letter.
+ </div>
+ <div *ngIf="signup.password.errors?.passwordHasLowercase===false">
+    Password must contain small letter.
+ </div>
+ <div *ngIf="signup.password.errors?.passwordHasNumeric===false">
+    Password must contain numeric value.
+ </div>
+ <div *ngIf="signup.password.errors?.passwordHasCapitalVowel">
+    Password must contain Vowels in Lowercase.
+ </div>
+ <div *ngIf="signup.password.errors?.passwordHasLowerConsonent">
+    Password must contain Consonants in Uppercase.
+ </div>
+</div>
+
+<button type="submit" [disabled]="!signupForm.valid">Submit</button>
+</form>
