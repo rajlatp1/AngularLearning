@@ -3,7 +3,8 @@
     <div class="column">
         <h2>Add To Do Item</h2>
         <input class="input" #todoTitle placeholder="Todo Title...">
-        <span class="button" (click)="onAdd(todoTitle.value)">Add</span>
+        <input class="input" #todoDescription placeholder="Todo Description...">
+        <span class="button" (click)="onAdd(todoTitle.value,todoDescription.value)">Add</span>
     </div>
 </div>
 <div class="row">

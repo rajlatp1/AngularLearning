@@ -1,6 +1,7 @@
 <div *ngIf="todos.length">
 <h2 style="margin:5px">List ToDo Item</h2>
-<div *ngFor="let todo of (todos)">
-    {{ todo.id }} {{ todo.title | vowToUpperConToLower}}
+<div *ngFor="let todo of (todos);let i = index">
+    <a [routerLink]="['/todo-details',i]" >{{ todo.id }}</a>
+    {{ todo.title | vowToUpperConToLower}}
     <span class="button" (click)="onDelete(todo.id)">X</span>
 </div></div>

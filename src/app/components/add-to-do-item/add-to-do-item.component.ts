@@ -16,8 +16,8 @@ export class AddToDoItemComponent implements OnInit {
     this.todoService.sharedtodos.subscribe(todos =>    
     this.todos = todos)
   }
-  onAdd(todoTitle: string): void {
-    this.todoService.addTodoItem(todoTitle);
+  onAdd(todoTitle: string, todoDescription:string): void {
+    this.todoService.addTodoItem(todoTitle,todoDescription);
   }
   onDelete(id:number): void {
     this.todoService.removeTodoItem(id);

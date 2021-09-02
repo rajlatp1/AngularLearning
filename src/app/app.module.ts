@@ -10,6 +10,7 @@ import { VowToUpperConToLowerPipe } from './pipes/vow-to-upper-con-to-lower.pipe
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
     VowToUpperConToLowerPipe,
     PageNotFoundComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    TodoDetailsComponent
   ],
   imports: [
     BrowserModule,

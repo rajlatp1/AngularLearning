@@ -14,8 +14,8 @@ export class TodoService {
 
   constructor() { }
 
-  addTodoItem(todoTitle: string): void {
-    const todo = new Todo(this.todoid++,todoTitle);
+  addTodoItem(todoTitle: string,todoDescription: string): void {
+    const todo = new Todo(this.todoid++,todoTitle,todoDescription);
     this.todos.push(todo);
     this.todo.next(this.todos.slice());
   }
@@ -26,5 +26,8 @@ export class TodoService {
       }
       this.todo.next(this.todos.slice());
     });
+  }
+  getTodoItem(id: number) {
+    return this.todos[id];
   }
 }
