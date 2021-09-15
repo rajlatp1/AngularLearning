@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TodoDetailsComponent } from './components/todo-details/todo-details.component';
+import { ServerTodoComponent } from './components/server-todo/server-todo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { TodoDetailsComponent } from './components/todo-details/todo-details.com
     PageNotFoundComponent,
     SignupComponent,
     HeaderComponent,
-    TodoDetailsComponent
+    TodoDetailsComponent,
+    ServerTodoComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

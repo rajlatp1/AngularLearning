@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>USER ID</th>
+        <th>ID</th>
+        <th>TITILE</th>
+        <th>COMPLETED</th>
+    </tr>
+<tr *ngFor="let todo of todos">
+    <td>{{todo.userId }}</td>
+    <td>{{todo.id }}</td>
+    <td>{{todo.title | uppercase}}</td>
+    <td>{{todo.completed }}</td>
+  </tr>
+</table>
+
+
+
